@@ -1,0 +1,75 @@
+// {
+//   "extends": "next/core-web-vitals"
+// }
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    // "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "endOfLine": "auto"
+      }
+    ],
+    "no-console": "off",
+    "no-alert": "off",
+    "no-unused-vars": "off",
+    "camelcase": "off",
+    "@next/next/no-page-custom-font": "off",
+    "react/no-unescaped-entities": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-no-bind": "off",
+    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "no-param-reassign": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-no-constructed-context-values": "off"
+  }
+}
+
+// {
+//   "parserOptions": {
+//     "ecmaFeatures": {
+//       "jsx": true
+//     },
+//     "ecmaVersion": "latest",
+//     "sourceType": "module"
+//   },
+//   "rules": {
+//     "no-console": "off",
+//     "no-alert": "off",
+//     "no-unused-vars": "off",
+//     "camelcase": "off",
+//     "react/no-unescaped-entities": "off",
+//     "react/react-in-jsx-scope": "off",
+//     "react/jsx-no-bind": "off",
+//     "react/prop-types": "off",
+//     "react/jsx-props-no-spreading": "off",
+//     "jsx-a11y/anchor-is-valid": "off",
+//     "jsx-a11y/label-has-associated-control": "off",
+//     "jsx-a11y/click-events-have-key-events": "off",
+//     "jsx-a11y/no-static-element-interactions": "off",
+//     "no-param-reassign": "off",
+//     "import/prefer-default-export": "off",
+//     "react/jsx-no-constructed-context-values": "off"
+//   }
+
+// }
