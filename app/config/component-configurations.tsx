@@ -29,7 +29,7 @@ export const presetComponents = {
   li: (props: any) => <li className="list-inside list-disc mt-2" {...props} />,
   img: (props: any) => <img className="w-full" {...props} />,
   // img,
-  p: (props: any) => <p className="my-4" {...props} />,
+  p: (props: any) => <p className="my-4 leading-[25px]" {...props} />,
   blockquote: (props: any) => (
     <blockquote
       className="py-4 px-10 italic bg-slate-900 text-white my-6"
