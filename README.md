@@ -22,3 +22,11 @@ Finally, follow the CLI prompt(CTRL + click), and open [http://localhost:3000](h
 
 **...more README updates on the way.**
 
+-------------------------------------------------------------------------------------
+
+**⚠️⚠️⚠️**
+
+**This project is open-source, but it is not free-to-duplicate and user verbatim - License is not MIT**
+
+Send an email for help/permission(s): [okpainmoandrew@gmail.com](mailto:http://localhost:3000)
+
