@@ -25,7 +25,8 @@ async function PostPage({ params }: any) {
   const mdxPosts = files.filter((file) => file.endsWith('.mdx'));
 
   const currentPostFilePath = mdxPosts.find((each) => {
-    return each.replace(/\s/g, '-').split('.')[0] == postId;
+    // remove initial number and hyphen in from of each post name
+    return each.slice(2).replace(/\s/g, '-').split('.')[0] == postId;
   });
 
   const fileContent = fs.readFileSync(
@@ -74,7 +75,7 @@ async function PostPage({ params }: any) {
 
   return (
     <MainAppLayout>
-      <main className="about-page px-3 sm:px-[20px] mt-[40px]">
+      <main className="post-page px-3 sm:px-[20px] mt-[40px]">
         <PostPageHeadSection
           authorPhotoUrl={postData.authorPhotoUrl}
           authorName={postData.authorName}

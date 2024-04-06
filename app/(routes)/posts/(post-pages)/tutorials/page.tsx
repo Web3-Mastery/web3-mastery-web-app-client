@@ -4,7 +4,7 @@ import { HiArrowLongRight } from 'react-icons/hi2';
 import MainAppLayout from '@/app/global-components/layout/MainAppLayout';
 import PostListPageTitleHeader from '../../components/PostListPageTitleHeader';
 import fs from 'fs';
-// import matter from 'gray-matter';
+import matter from 'gray-matter';
 
 const basePath = 'content/tutorials';
 
@@ -17,8 +17,16 @@ function TutorialsPostListPage() {
 
   const mdxPosts = files.filter((file) => file.endsWith('.mdx'));
 
-  const posts = mdxPosts.map((filename) => {
-    return { postId: filename.replace(/\s/g, '-').split('.')[0] };
+  const allPostFilePaths = mdxPosts.map((each) => {
+    return each;
+  });
+
+  const allPostFileContent = allPostFilePaths.map((each) => {
+    const fileContent = fs.readFileSync(`${basePath}/${each}`, 'utf8');
+
+    const matterResult = matter(fileContent);
+
+    return matterResult.data;
   });
 
   return (
@@ -33,11 +41,11 @@ function TutorialsPostListPage() {
           className="platform-provisions px-3 sm:px-[20px] lg:px-12 grid gap-y-[40px] md:gap-y-[50px] gap-x-[30px] 
           md:gap-x-[50px] text-left lg:w-full lg:mb-0 sm:grid-cols-2 lg:grid-cols-3 lg:text-left md:mt-[50px] py-[50px] mx-auto"
         >
-          {posts.map((each) => {
+          {allPostFileContent.map((each) => {
             return (
               <Link
-                key={each.postId}
-                href={`/posts/tutorials/${each.postId.replace(/\s/g, '-').toLowerCase()}`}
+                key={each.postSlug}
+                href={`/posts/tutorials/${each.postSlug.replace(/\s/g, '-').toLowerCase()}`}
                 className="card-glass_dark flex flex-col justify-between group rounded-lg border border-gray-300 px-5 py-4 min-h-[220px]"
               >
                 <section>
@@ -45,8 +53,7 @@ function TutorialsPostListPage() {
                     className={`mb-3 text-[20px] font-semibold flex items-start justify-between gap-5 sm:gap-8`}
                   >
                     <span className="post-title poppins font-thin">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit
-                      adipisicing.
+                      {each.postTitle}
                     </span>
                     <div className="mt-2 inline-flex items-center gap-2 transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                       <span className="text-[14px]">Read</span>{' '}
@@ -54,13 +61,11 @@ function TutorialsPostListPage() {
                     </div>
                   </div>
                   <p className={`m-0 w-full text-sm opacity-50 post-brief`}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                    quod animi quidem accusantium consequatur obcaecati repellat
-                    in sed...
+                    {each.postBrief}
                   </p>
                 </section>
                 <div>
-                  <div className="date mt-4 text-[12px]">March 1, 2024</div>
+                  <div className="date mt-4 text-[12px]">{each.postDate}</div>
                   <div></div>
                 </div>
               </Link>

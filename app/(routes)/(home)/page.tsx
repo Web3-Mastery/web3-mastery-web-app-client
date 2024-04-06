@@ -4,8 +4,35 @@ import MainAppLayout from '@/app/global-components/layout/MainAppLayout';
 import { HiArrowLongRight } from 'react-icons/hi2';
 import { categoriesData } from '@/app/config/categories-config';
 import CustomSectionHeader from '@/app/global-components/CustomSectionHeader';
+import matter from 'gray-matter';
+import fs from 'fs';
+
+// to get blog posts
+const basePath = 'content/blog';
 
 function HomePage() {
+  const files = fs.readdirSync(basePath);
+
+  const mdxPosts = files.filter((file) => file.endsWith('.mdx'));
+
+  const blogPostFilePaths = mdxPosts.map((each) => {
+    return each;
+  });
+
+  const blogPostFileContent = blogPostFilePaths.map((each) => {
+    const fileContent = fs.readFileSync(`${basePath}/${each}`, 'utf8');
+
+    const matterResult = matter(fileContent);
+
+    return matterResult.data;
+  });
+
+  const sortedBlogPosts = blogPostFileContent.sort(
+    (a: any, b: any) => b.postIndex - a.postIndex
+  );
+
+  // console.log(sortedBlogPosts);
+
   return (
     <MainAppLayout>
       <main className="flex min-h-screen flex-col items-center justify-between pt-24 lg:pt-32">
@@ -32,10 +59,10 @@ function HomePage() {
         </section>
         <section
           id="platform-provisions-section"
-          className=" mt-[150px] py-[100px]"
+          className="platform-provisions mt-[150px] py-[100px]"
         >
           <CustomSectionHeader headerText="Explore..." />
-          <section className="platform-provisions px-3 sm:px-[20px] lg:px-0 grid gap-y-[40px] gap-x-[30px] text-left lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 sm:grid-cols-2 lg:text-left">
+          <section className="px-3 sm:px-[20px] lg:px-0 grid gap-y-[40px] gap-x-[30px] text-left lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 sm:grid-cols-2 lg:text-left">
             {categoriesData.map((category) => {
               return (
                 <Link
@@ -56,6 +83,41 @@ function HomePage() {
                   <p className={`m-0 w-full text-sm opacity-50`}>
                     {category.categoryBrief}
                   </p>
+                </Link>
+              );
+            })}
+          </section>
+        </section>
+        <section className="latest-blog-posts pt-[70px] pb-[100px] md:py-[100px]">
+          <CustomSectionHeader headerText="Latest blog posts" />
+          <section className="px-3 sm:px-[20px] lg:px-0 grid gap-y-[40px] gap-x-[30px] text-left lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 sm:grid-cols-2 lg:text-left">
+            {sortedBlogPosts?.slice(0, 9).map((each) => {
+              return (
+                <Link
+                  key={each.postSlug}
+                  href={`/posts/blog/${each.postSlug.replace(/\s/g, '-').toLowerCase()}`}
+                  className="card-glass_dark flex flex-col justify-between group rounded-lg border border-gray-300 px-5 py-4 min-h-[270px]"
+                >
+                  <section>
+                    <div
+                      className={`mb-3 text-[20px] font-semibold flex items-start justify-between gap-5 sm:gap-8`}
+                    >
+                      <span className="post-title poppins font-thin">
+                        {each.postTitle}
+                      </span>
+                      <div className="mt-2 inline-flex items-center gap-2 transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                        <span className="text-[14px]">Read</span>{' '}
+                        <HiArrowLongRight />
+                      </div>
+                    </div>
+                    <p className={`m-0 w-full text-sm opacity-50 post-brief`}>
+                      {each.postBrief}
+                    </p>
+                  </section>
+                  <div>
+                    <div className="date mt-4 text-[12px]">{each.postDate}</div>
+                    <div></div>
+                  </div>
                 </Link>
               );
             })}

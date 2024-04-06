@@ -6,6 +6,7 @@ import PageNavigator from '../../../components/PageNavigator';
 import fs from 'fs';
 import matter from 'gray-matter';
 import { MDXRemote } from 'next-mdx-remote/rsc';
+// import { serialize } from 'next-mdx-remote/serialize';
 import { presetComponents } from '@/app/config/component-configurations';
 import PostPageHeadSection from '../../../components/PostPageHeadSection';
 import AboutAuthorSection from '../../../components/AboutAuthorSection';
@@ -24,7 +25,8 @@ async function PostPage({ params }: any) {
   const mdxPosts = files.filter((file) => file.endsWith('.mdx'));
 
   const currentPostFilePath = mdxPosts.find((each) => {
-    return each.replace(/\s/g, '-').split('.')[0] == postId;
+    // remove initial number and hyphen in from of each post name
+    return each.slice(2).replace(/\s/g, '-').split('.')[0] == postId;
   });
 
   const fileContent = fs.readFileSync(
@@ -33,23 +35,47 @@ async function PostPage({ params }: any) {
   );
 
   const matterResult = matter(fileContent);
-  // console.log(matterResult);
+  const {
+    authorPhotoUrl,
+    authorName,
+    postTitle,
+    postDate,
+    authorBio,
+    postIndex,
+    postTags
+  } = matterResult.data;
 
   const postData = {
-    authorPhotoUrl: '/web3-mastery-logo.png',
-    authorName: 'Andrew James Okpainmo',
-    postTitle: 'How to learn Solidity in 2024',
-    postDate: 'March 3, 2024',
-    authorBio: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis
-        placeat velit sapiente voluptas in similique tempora officia illo enim
-        maxime iste quas dolor quae, labore asperiores voluptatibus vitae quos
-        qui et quam dicta molestias porro? Suscipit accusantium velit
-        reprehenderit explicabo odio exercitationem sed repellendus itaque, ab`
+    authorPhotoUrl,
+    authorName,
+    postTitle,
+    postDate,
+    authorBio
   };
+
+  // logic: get previous and next post file paths
+  const allPostFilePaths = mdxPosts.map((each) => {
+    return each;
+  });
+
+  const allPostFileContent = allPostFilePaths.map((each) => {
+    const fileContent = fs.readFileSync(`${basePath}/${each}`, 'utf8');
+
+    const matterResult = matter(fileContent);
+
+    return matterResult;
+  });
+
+  // smiles: js index play at work here - I simplified things by using js indexing pattern on the posts
+  const previousPostIndex = Number(postIndex) - 1;
+  const nextPostIndex = Number(postIndex) + 1;
+
+  const previousPostData = allPostFileContent[previousPostIndex]?.data;
+  const nextPostData = allPostFileContent[nextPostIndex]?.data;
 
   return (
     <MainAppLayout>
-      <main className="about-page px-3 sm:px-[20px] mt-[40px]">
+      <main className="post-page px-3 sm:px-[20px] mt-[40px]">
         <PostPageHeadSection
           authorPhotoUrl={postData.authorPhotoUrl}
           authorName={postData.authorName}
@@ -62,10 +88,10 @@ async function PostPage({ params }: any) {
           </article>
         </PostWrapper>
         <PageNavigator
-          nextTitle={`Lorem ipsum dolor sit amet olor sit amet. em ipsum dolor sit. `}
-          previousTitle={`Lorem ipsum dolor sit amet. em ipsum dolor sit amet sum dolor sit a.`}
-          previousPostRoute="/"
-          nextPostRoute="/"
+          nextTitle={nextPostData?.postTitle}
+          previousTitle={previousPostData?.postTitle}
+          previousPostRoute={`/posts/foundry/${previousPostData?.postSlug}`}
+          nextPostRoute={`/posts/foundry/${nextPostData?.postSlug}`}
         />
         <AboutAuthorSection authorBio={postData.authorBio} />
       </main>
