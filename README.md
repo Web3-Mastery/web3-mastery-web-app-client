@@ -4,7 +4,7 @@
 
 ## Getting Started
 
-- Install all
+- Install all dependencies:
 
 
 ```bash
@@ -19,5 +19,6 @@ npm run dev
 
 Finally, follow the CLI prompt(CTRL + click), and open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-**...more readme updates on the way.**
+
+**...more README updates on the way.**
 
