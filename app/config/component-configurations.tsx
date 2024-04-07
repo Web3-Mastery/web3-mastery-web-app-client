@@ -1,6 +1,5 @@
 import SyntaxHighlighter from 'react-syntax-highlighter';
 
-
 export const presetComponents = {
   SyntaxHighlighter,
   h1: (props: any) => (
