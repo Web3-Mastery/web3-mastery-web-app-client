@@ -1,5 +1,3 @@
-'use client';
-
 import type { Metadata } from 'next';
 import './styles/globals.css';
 import { nunito_sans, poppins } from './utils/font';
