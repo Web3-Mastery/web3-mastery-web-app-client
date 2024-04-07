@@ -59,7 +59,7 @@ function HomePage() {
         </section>
         <section
           id="platform-provisions-section"
-          className="platform-provisions mt-[150px] py-[100px]"
+          className="platform-provisions mt-[220px] py-[30px]"
         >
           <CustomSectionHeader headerText="Explore..." />
           <section className="px-3 sm:px-[20px] lg:px-0 grid gap-y-[40px] gap-x-[30px] text-left lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 sm:grid-cols-2 lg:text-left">
@@ -90,7 +90,7 @@ function HomePage() {
         </section>
         <section className="latest-blog-posts pt-[70px] pb-[100px] md:py-[100px]">
           <CustomSectionHeader headerText="Latest blog posts" />
-          <section className="px-3 sm:px-[20px] lg:px-0 grid gap-y-[40px] gap-x-[30px] text-left lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 sm:grid-cols-2 lg:text-left">
+          <section className="px-3 sm:px-[20px] grid gap-y-[40px] gap-x-[30px] text-left lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 sm:grid-cols-2 lg:text-left">
             {sortedBlogPosts?.slice(0, 9).map((each) => {
               return (
                 <Link

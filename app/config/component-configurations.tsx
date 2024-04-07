@@ -1,5 +1,6 @@
 import SyntaxHighlighter from 'react-syntax-highlighter';
 
+
 export const presetComponents = {
   SyntaxHighlighter,
   h1: (props: any) => (
@@ -32,8 +33,9 @@ export const presetComponents = {
   p: (props: any) => <p className="my-4 leading-[25px]" {...props} />,
   blockquote: (props: any) => (
     <blockquote
-      className="py-4 px-10 italic bg-slate-900 text-white my-6"
+      className="py-4 px-8 italic bg-slate-900 text-white my-6"
       {...props}
     />
-  )
+  ),
+  code: (props: any) => <code className="py-6 px-4" {...props} />
 };

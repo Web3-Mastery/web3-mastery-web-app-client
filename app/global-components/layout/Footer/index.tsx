@@ -1,7 +1,7 @@
 import React from 'react';
 import { RxPaperPlane } from 'react-icons/rx';
 import Link from 'next/link';
-import FooterIconWrapper from './FooterIconWrapper';
+import IconWrapper from './IconWrapper';
 import { IoLogoTwitter, IoLogoYoutube, IoLogoLinkedin } from 'react-icons/io5';
 import { BiLogoDiscordAlt } from 'react-icons/bi';
 import { BiLogoGithub } from 'react-icons/bi';
@@ -37,29 +37,30 @@ function Footer() {
         <Link href="/about">About</Link>
       </section>
       <section className="socials-section flex gap-6 justify-center mt-6 mb-16">
-        <FooterIconWrapper>
+        <IconWrapper>
           <a href="https://twitter.com/web3mastery_org">
             <IoLogoTwitter className="text-[17px] translate-y-[1px]" />
           </a>
-        </FooterIconWrapper>
-        <FooterIconWrapper>
+        </IconWrapper>
+        <IconWrapper>
           <a href="https://www.linkedin.com/company/web3-mastery">
             <IoLogoLinkedin className="text-[16.5px] translate-y-[1px]" />
           </a>
-        </FooterIconWrapper>
-        <FooterIconWrapper>
-          <a href="https://github.com/Web3-Mastery">
-            <BiLogoGithub className="text-[19px] translate-x-[-1px] translate-y-[-0.5px]" />
-          </a>
-        </FooterIconWrapper>
+        </IconWrapper>
+
         {/* Remove the below div-wrapper and let elements be direct inside "socials-section" due to flex assignment */}
         <div className="hidden">
-          <FooterIconWrapper>
+          <IconWrapper>
+            <a href="https://github.com/Web3-Mastery">
+              <BiLogoGithub className="text-[19px] translate-x-[-1px] translate-y-[-0.5px]" />
+            </a>
+          </IconWrapper>
+          <IconWrapper>
             <BiLogoDiscordAlt className="text-[17px]" />
-          </FooterIconWrapper>
-          <FooterIconWrapper>
+          </IconWrapper>
+          <IconWrapper>
             <IoLogoYoutube className="text-[17px]" />
-          </FooterIconWrapper>
+          </IconWrapper>
         </div>
       </section>
     </footer>
