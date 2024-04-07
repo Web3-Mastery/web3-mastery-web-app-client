@@ -11,6 +11,11 @@
 }
 
 @layer utilities {
+  pre {
+   padding-left: 0!important;
+   padding-right: 0!important;
+  }
+
   .bg-glass_light {
     /* From https://css.glass */
     background: rgba(255, 255, 255, 0.85);
