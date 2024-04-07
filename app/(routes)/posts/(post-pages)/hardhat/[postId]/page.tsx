@@ -109,7 +109,7 @@ export async function generateStaticParams() {
   const mdxPosts = files.filter((file) => file.endsWith('.mdx'));
 
   const paths = mdxPosts.map((filename) => {
-    return { postId: filename.replace(/\s/g, '-').split('.')[0] };
+    return { postId: filename.slice(2).replace(/\s/g, '-').split('.')[0] };
   });
 
   // console.log(paths);
