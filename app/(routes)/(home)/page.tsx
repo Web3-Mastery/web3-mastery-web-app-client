@@ -8,7 +8,7 @@ import matter from 'gray-matter';
 import fs from 'fs';
 
 export const metadata: Metadata = {
-  title: 'Home | Web3 Mastery',
+  title: 'Web3 Mastery | Home',
   description:
     'The minimalist web3/blockchain education platform that turns you into a web3/blockchain master.',
   keywords: [
