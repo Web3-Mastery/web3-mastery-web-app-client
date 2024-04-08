@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import MainAppLayout from '@/app/global-components/layout/MainAppLayout';
 import { HiArrowLongRight } from 'react-icons/hi2';
@@ -6,6 +6,23 @@ import { categoriesData } from '@/app/config/categories-config';
 import CustomSectionHeader from '@/app/global-components/CustomSectionHeader';
 import matter from 'gray-matter';
 import fs from 'fs';
+
+export const metadata: Metadata = {
+  title: 'Home | Web3 Mastery',
+  description:
+    'The minimalist web3/blockchain education platform that turns you into a web3/blockchain master.',
+  keywords: [
+    'Web3',
+    'Blockchain',
+    'Solidity',
+    'Blockchain development',
+    'Smart contracts',
+    'Hardhat',
+    'Web3 Jobs',
+    'Foundry',
+    'Solana'
+  ]
+};
 
 // to get blog posts
 const basePath = 'content/blog';
@@ -59,7 +76,7 @@ function HomePage() {
         </section>
         <section
           id="platform-provisions-section"
-          className="platform-provisions mt-[220px] py-[30px]"
+          className="platform-provisions mt-[220px] md:mt-[100px] py-[30px] md:py-[150px]"
         >
           <CustomSectionHeader headerText="Explore..." />
           <section className="px-3 sm:px-[20px] lg:px-0 grid gap-y-[40px] gap-x-[30px] text-left lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 sm:grid-cols-2 lg:text-left">

@@ -36,7 +36,7 @@ function Navbar() {
       <div className="nav-left relative">
         <div className="hidden lg:inline-block">
           <div
-            className={`${isMenuOn ? 'inline-block' : 'hidden'} text-[12px] pop-up-menu bg-glass_light w-[300px] absolute z-20 right-[10px] top-[50px] border border-gray-200 rounded-[5px] px-4 py-6`}
+            className={`pop-up-menu ${isMenuOn ? 'inline-block' : 'hidden'} text-[12px] card-glass_dark bg-glass_light w-[300px] absolute z-20 right-[10px] top-[50px] border border-gray-200 rounded-[5px] px-4 py-6`}
           >
             <ul className="uppercase font-normal flex flex-col text-center sm:mx-auto">
               <Link href="/dashboard">

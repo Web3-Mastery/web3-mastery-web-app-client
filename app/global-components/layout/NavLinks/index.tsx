@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useSelector, useDispatch } from 'react-redux';
+import { slideNavOut } from '@/app/rtk-base/slices/navToggleSlice';
 
 function NavLinks() {
+  //@ts-ignore
+  const { isNavSlidIn } = useSelector((store) => store.navToggle);
   const [showLearnMenu, setShowLearnMenu] = useState(false);
+
+  const dispatch = useDispatch();
 
   function toggleLearnMenu() {
     setShowLearnMenu(!showLearnMenu);
@@ -10,18 +16,18 @@ function NavLinks() {
 
   return (
     <ul className="relative uppercase font-normal flex flex-col text-center p-4 sm:p-0 w-[300px] xsm:w-[400px] mx-auto mt-[120px] lg:mt-[0] lg:flex-row lg:gap-10 lg:w-full text-[12px]">
-      <Link href="/dashboard">
+      <Link href="/" onClick={() => dispatch(slideNavOut())}>
         <li className="border-b lg:hidden border-gray-300 py-5 lg:border-none lg:py-0">
           My Dashboard
         </li>
       </Link>
-      <Link href="/">
+      <Link href="/" onClick={() => dispatch(slideNavOut())}>
         <li className="border-b border-gray-300 py-5 lg:border-none lg:py-0">
           Home
         </li>
       </Link>
 
-      <Link href="/posts/tutorials">
+      <Link href="/posts/tutorials" onClick={() => dispatch(slideNavOut())}>
         <li className="border-b border-gray-300 py-5 lg:border-none lg:py-0">
           Tutorials
         </li>
@@ -36,16 +42,34 @@ function NavLinks() {
       </li>
       {/* </Link> */}
       <div
-        className={`${showLearnMenu ? 'inline-block' : 'hidden'} learn-menu bg-glass_light w-[300px] absolute z-20 right-[10px] top-[250px] lg:top-[30px] border border-gray-200 rounded-[5px] px-4 py-6`}
+        className={`learn-menu ${showLearnMenu ? 'inline-block' : 'hidden'} card-glass_dark w-[300px] absolute z-20 right-[0] sm:right-[50px] lg:right-[10px] top-[250px] lg:top-[30px] border border-gray-200 rounded-[5px] px-4 py-6`}
       >
-        <ul className="uppercase font-normal flex flex-col text-center sm:mx-auto">
-          <Link href="/posts/solidity">
+        <ul className=" uppercase font-normal flex flex-col text-center sm:mx-auto">
+          <Link
+            href="/posts/solidity"
+            onClick={() => {
+              dispatch(slideNavOut());
+              toggleLearnMenu();
+            }}
+          >
             <li className="border-b border-gray-300 py-5">Learn Solidity</li>
           </Link>
-          <Link href="/posts/hardhat">
+          <Link
+            href="/posts/hardhat"
+            onClick={() => {
+              dispatch(slideNavOut());
+              toggleLearnMenu();
+            }}
+          >
             <li className="border-b border-gray-300 py-5">Learn Hardhat</li>
           </Link>
-          <Link href="/posts/foundry">
+          <Link
+            href="/posts/foundry"
+            onClick={() => {
+              dispatch(slideNavOut());
+              toggleLearnMenu();
+            }}
+          >
             <li className="py-5">Learn Foundry</li>
           </Link>
           {/* <button className="bg-slate-950 px-4 py-4 uppercase text-normal text-white mt-6">
@@ -53,12 +77,12 @@ function NavLinks() {
           </button> */}
         </ul>
       </div>
-      <Link href="/posts/blog">
+      <Link href="/posts/blog" onClick={() => dispatch(slideNavOut())}>
         <li className="border-b border-gray-300 py-5 lg:border-none lg:py-0">
           Blog
         </li>
       </Link>
-      <Link href="/about">
+      <Link href="/about" onClick={() => dispatch(slideNavOut())}>
         <li className="border-b border-gray-300 py-5 lg:border-none lg:py-0">
           About
         </li>

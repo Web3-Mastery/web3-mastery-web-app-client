@@ -1,8 +1,27 @@
+import type { Metadata } from 'next';
+
 import React from 'react';
 import Link from 'next/link';
 import MainAppLayout from '@/app/global-components/layout/MainAppLayout';
-import ParagraphElement from '@/app/(routes)/components/Paragraph';
-import PostWrapper from '@/app/(routes)/components/PostWrapper';
+import ParagraphElement from '@/app/global-components/Paragraph';
+import PostWrapper from '@/app/global-components/PostWrapper';
+
+export const metadata: Metadata = {
+  title: 'About | Web3 Mastery',
+  description:
+    'The minimalist web3/blockchain education platform that turns you into a web3/blockchain master.',
+  keywords: [
+    'Web3',
+    'Blockchain',
+    'Solidity',
+    'Blockchain development',
+    'Smart contracts',
+    'Hardhat',
+    'Web3 Jobs',
+    'Foundry',
+    'Solana'
+  ]
+};
 
 function AboutPage() {
   return (

@@ -1,7 +1,7 @@
 // 'use client';
 
 import MainAppLayout from '@/app/global-components/layout/MainAppLayout';
-import PostWrapper from '@/app/(routes)/components/PostWrapper';
+import PostWrapper from '@/app/global-components/PostWrapper';
 import PageNavigator from '../../../components/PageNavigator';
 import fs from 'fs';
 import matter from 'gray-matter';
