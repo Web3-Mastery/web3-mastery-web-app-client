@@ -1,0 +1,231 @@
+---
+postTitle: 'How to learn Solidity in 2024'
+postDate: 'March 12, 2024'
+postIndex: 0
+postBrief: 'An article that introduces the Solidity programming language, and proceeds to
+offer some pro-guidance on how best to approach learning Solidity if you 
+want to become a blockchain/smart-contract developer in 2024.'
+postThumbnailUrl: '/web3-mastery-logo.png'
+authorPhotoUrl: '/aj-okpainmo_dp.jpg'
+authorName: Andrew James Okpainmo
+authorBio: 'Andrew James Okpainmo is a fullstack web3 engineer who passionate about web3 and blockchain technology.
+He loves building and scaling startups, and is currently a Senior/Lead Developer as Terabyte. He is also the founder
+and lead-writer/editor at Web3 Mastery.'
+postTags: ['solidity', 'blockchain-development', 'javascript', 'typescript', 'software-development']
+postSlug: "how-to-learn-solidity-in-2024"
+authorSocials: ['https://twitter.com/AJ_Okpainmo', 'https://www.linkedin.com/in/okpainmo-andrew/', 'https://github.com/Okpainmo']
+---
+
+![poat banner](/post-image_01.png)
+*screenshot: [https://soliditylang.org/](https://soliditylang.org/)*
+
+I suppose you know by now, what [Solidity](https://soliditylang.org/)(the programming language) is all about. 
+
+Just in case you do not, no worries as I'll be explaining that in just a bit. 
+
+For short, Solidity is a programming language that is used for building smart contracts.
+
+> Smart contracts are autonomous computer programs that are executed in a decentralized manner - without the need
+of a centralized or third-party entity. They are basically sets of computer codes that control the execution of 
+agreements/transactions on top of blockchains. 
+
+To give you a first hand look of how smart contracts are written in Solidity, just below is some Solidity smart contract code, 
+The code below shows how to use variables, structs(a data type), functions and a lot more in Solidity.
+
+As can be easily deduced, the smart contract creates a new user(programmaticPerson), provides for assigning certain data to the 
+person(through the person struct), and then also provides for obtaining those individual data (that were added) about the person. 
+
+<HighlighterWrapper
+language="solidity" 
+content={`
+    // SPDX-License-Identifier: MIT
+
+    pragma solidity ^0.8.0;
+
+    contract PracticeContract {
+        uint private myNumber;
+
+        struct PersonStruct {
+            string name;
+            uint favouriteNumber;
+            bool isMale;
+        }
+
+        PersonStruct private programmaticPerson;
+
+        function setPerson(
+            string memory _name,
+            uint _favouriteNumber,
+            bool _isMale
+        ) public {
+            programmaticPerson = PersonStruct({
+                name: _name,
+                favouriteNumber: _favouriteNumber,
+                isMale: _isMale
+            });
+        }
+
+        function getProgrammaticPerson() public view returns (PersonStruct memory) {
+            return programmaticPerson;
+        } 
+
+        // Function to get the name of the programmatic person
+        function getProgrammaticPersonName() public view returns (string memory) {
+            return programmaticPerson.name;
+        }
+
+        // Function to get the favorite number of the programmatic person
+        function getProgrammaticPersonFavouriteNumber() public view returns (uint) {
+            return programmaticPerson.favouriteNumber;
+        }
+
+        // Function to get the gender of the programmatic person
+        function getProgrammaticPersonGender() public view returns (bool) {
+            return programmaticPerson.isMale;
+        }
+    }
+`}/>
+
+In this article, I'll be sharing some important details about Solidity, and also giving you some pro-guidance on how best to 
+approach learning Solidity - especially if you want to become a blockchain/smart-contract developer in 2024.
+
+**I'll be using the above code-snippet more in this article, so as to help your understanding and drive home the message a 
+lot better.** 
+
+## A little more about Solidity.
+
+According to the [Solidity website](https://soliditylang.org/); 
+
+> Solidity is "A statically-typed curly-braces programming language designed for developing smart contracts that run on 
+[Ethereum](https://ethereum.org/)"
+
+Even though Solidity can also be used on [Solana](https://solana.com) as explained 
+[in this article](https://www.quicknode.com/guides/solana-development/solidity/solang-get-started), Solidity was primarily 
+created for programming smart contracts on Ethereum.
+
+Now that you've gotten a good introduction as to what Solidity is all about, Let's move on to explaining how you should approach 
+learning solidity in 2024 - expecially if you're intending to become a smart contract developer.
+
+This article is best suited for folks that are totally new to programming - especially those who are just at the beginning 
+of their software engineering/development careers - with Solidity as their first programming language. It's also a perfect 
+resource for folks who have some programming experience, but have not learnt or used Javascript earlier. 
+
+It's also important to note that the inspiration for this article came through my personal experience. I hope my experience 
+helps you discover a better approach that empowers you to learn Solidity in a way that will be more rewarding.  
+
+## How you should approach learning Solidity in 2024.
+
+Below are some key-notes to consider if you wish to Learn Solidity for smart contract development in 2024.
+
+### 1. Learn Javascript first.
+
+The main reason why I recommended this, is the fact that:
+
+- **As a Solidity developer, you will most-likely need Javascript when working with your smart contracts**.
+
+Whether you're a seasoned programmer with experience in working with different programming languages, or just a starter
+in the tech space. As long as you intend to become a smart contract developer, learning Javascript is a task you'll hardly 
+escape.
+
+A practical example of this, is when working with Hardhat. Hardhat is a javascript-based smart contract development framework
+/suite that provides blockchain developers with the necessary stack of tools they need to work with smart contracts. It is
+an all-in-one tool for developing, testing, deploying and even interacting with smart contracts.
+
+In the case of using Hardhat, even though your smart contracts are written in Solidity, you will still need Javascript to 
+write you test and script like your deployment script(s), or scripts to interract with functionalities provided in 
+the smart contact.
+
+Furthermore, when it comes to interracting with your smart contracts(especially in a front-end application) after 
+deploying them, you'll still need libraries likely [Ethers js](https://docs.ethers.org/v6/) and 
+[Web3 js](https://web3js.readthedocs.io/en/v1.10.0/) or more robust tools like 
+[Moralis](https://docs.moralis.io/) and [Wagmi](https://wagmi.sh/) - **which are all Javascript based**.
+
+It's all boils down to the fact that - you'll certainly need Javascript at one point or the other in your career as a blockchain
+developer. 
+
+You might still be wondering why you need to "learn Javascript **first**" - this next point addresses that.
+
+- **Javascript is a simpler and loose programming language - hence will be more easy to learn than Solidity**.
+
+Javascript is a simple programming langauge. To add to this, is the fact that it is also a dynamically-typed(you don't need to 
+declare types) and loosely typed(it's ability to do **"super-silly"** things like adding/concatenating a **string** to/with a 
+**number**) programming language, unlike Solidity which is a statically-typed programming language.
+
+All these **disadvatages** of using Javascript, do serve as potential advantages to folks who are learning it for the first time.
+The loose and dynamically-typed nature of Javascript saves you from a "nosy tantrum-throwing compiler" 
+that keeps complaining about your code until you get it right. Those complaints can be frustrating - especially for
+newbies.
+
+The third reason why it's a good-idea to learn Javascript before Solidity, has to do with **similarity in syntax**.
+
+- **Solidity is quite similar to Javascript syntax-wise**.
+
+The two code-snippets below, show how to write two selected functions from the above smart contract in both Solidity and 
+Javascript.
+
+<HighlighterWrapper
+language="solidity" 
+content={`
+    // SPDX-License-Identifier: MIT
+
+    ...
+
+        function setPerson(
+            string memory _name,
+            uint _favouriteNumber,
+            bool _isMale
+        ) public {
+            programmaticPerson = PersonStruct({
+                name: _name,
+                favouriteNumber: _favouriteNumber,
+                isMale: _isMale
+            });
+        }
+
+        function getProgrammaticPerson() public view returns (PersonStruct memory) {
+            return programmaticPerson;
+        } 
+
+    ...
+
+    }
+`}/>
+
+<HighlighterWrapper
+language="javascript" 
+content={`
+
+    ...
+
+        function setPerson(
+            _name,
+            _favouriteNumber,
+            _isMale
+        ) {
+           programmaticPerson = {
+                name: _name,
+                favouriteNumber: _favouriteNumber,
+                isMale: _isMale
+            };
+
+           // do something with programmaticPerson like using it to update a database
+        }
+
+        function getProgrammaticPerson() {
+            return programmaticPerson;
+        } 
+
+    ...
+    
+    }
+`}/>
+
+
+The code snippets above, reveal very practically - the similarity in syntax between Javascript and Solidity.
+
+Both syntax are very similar - except for some extra foreign/unique concepts in both language like how they declare variables
+differently, types and returns, visibility, and storage - all in solidity, and more other differences. 
+
+> Combining the above factor about syntax-similarity and the previous ones - especially the one about Javascript being easier to
+learn, it's simply a no-brainer to learn Javascript before taking on Solidity.
+
