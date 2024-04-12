@@ -4,15 +4,34 @@ import { HighlighterWrapper } from '../(routes)/posts/components/HighlighterWrap
 export const presetComponents = {
   HighlighterWrapper,
   SyntaxHighlighter,
-  h1: (props: any) => <h1 className="font-extralight text-2xl" {...props} />,
-  h2: (props: any) => <h2 className="font-extralight text-xl" {...props} />,
-  h3: (props: any) => <h3 className="font-extralight text-base" {...props} />,
-  a: (props: any) => <a className="text-gray-400 underline" {...props} />,
-  li: (props: any) => <li className="list-inside list-disc mt-2" {...props} />,
-  em: (props: any) => (
-    <em className="relative top-1.5 text-[13px]" {...props} />
+  h1: (props: any) => (
+    <h1
+      className="font-extralight text-2xl md:text-[25px] poppins mt-10"
+      {...props}
+    />
   ),
-  img: (props: any) => <img className="w-full" {...props} />,
+  h2: (props: any) => (
+    <h2
+      className="font-extralight text-xl md:text-[23px] poppins mt-10"
+      {...props}
+    />
+  ),
+  h3: (props: any) => (
+    <h3
+      className="font-extralight text-base md:text-[18px] poppins mt-10"
+      {...props}
+    />
+  ),
+  a: (props: any) => <a className="text-gray-400 underline" {...props} />,
+  ul: (props: any) => <ul className="list-inside list-disc my-2" {...props} />,
+  ol: (props: any) => (
+    <ol className="list-inside list-decimal my-2" {...props} />
+  ),
+  li: (props: any) => <li className="my-4" {...props} />,
+  em: (props: any) => (
+    <em className="relative top-[-10px] text-[13px]" {...props} />
+  ),
+  img: (props: any) => <img className="w-full py-4" {...props} />,
   // img,
   p: (props: any) => <p className="my-4 leading-[25px]" {...props} />,
   blockquote: (props: any) => (
