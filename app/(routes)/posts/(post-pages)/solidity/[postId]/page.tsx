@@ -108,14 +108,12 @@ export default PostPage;
 export async function generateStaticParams() {
   const files = fs.readdirSync(basePath);
 
-  if (files) {
-    const mdxPosts = files?.filter((file) => file.endsWith('.mdx'));
+  const mdxPosts = files.filter((file) => file.endsWith('.mdx'));
 
-    const paths = mdxPosts.map((filename) => {
-      return { postId: filename.slice(2).replace(/\s/g, '-').split('.')[0] };
-    });
+  const paths = mdxPosts.map((filename) => {
+    return { postId: filename.slice(2).replace(/\s/g, '-').split('.')[0] };
+  });
 
-    // console.log(paths);
-    return paths;
-  }
+  // console.log(paths);
+  return paths;
 }
