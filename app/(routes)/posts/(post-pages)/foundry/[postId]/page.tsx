@@ -42,7 +42,8 @@ async function PostPage({ params }: any) {
     postDate,
     authorBio,
     postIndex,
-    postTags
+    postTags,
+    authorSocials
   } = matterResult.data;
 
   const postData = {
@@ -50,10 +51,10 @@ async function PostPage({ params }: any) {
     authorName,
     postTitle,
     postDate,
-    authorBio
+    authorBio,
+    authorSocials
   };
 
-  // logic: get previous and next post file paths
   const allPostFilePaths = mdxPosts.map((each) => {
     return each;
   });
@@ -93,7 +94,10 @@ async function PostPage({ params }: any) {
           previousPostRoute={`/posts/foundry/${previousPostData?.postSlug}`}
           nextPostRoute={`/posts/foundry/${nextPostData?.postSlug}`}
         />
-        <AboutAuthorSection authorBio={postData.authorBio} />
+        <AboutAuthorSection
+          authorBio={postData.authorBio}
+          authorSocials={postData.authorSocials}
+        />
       </main>
     </MainAppLayout>
   );

@@ -7,9 +7,9 @@ import ParagraphElement from '@/app/global-components/Paragraph';
 import PostWrapper from '@/app/global-components/PostWrapper';
 
 export const metadata: Metadata = {
-  title: 'Web3 Mastery | About',
+  title: 'About Web3 Mastery',
   description:
-    'The minimalist web3/blockchain education platform that turns you into a web3/blockchain master.',
+    'The "minimalist" web3/blockchain education platform that turns you into a web3/blockchain master.',
   keywords: [
     'Web3',
     'Blockchain',
