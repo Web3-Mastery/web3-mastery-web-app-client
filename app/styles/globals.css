@@ -2,18 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-.nunito_sans {
-  font-family: var(--font-nunito_sans);
-}
 
-.poppins {
-  font-family: var(--font-poppins);
-}
 
 @layer utilities {
+  .nunito_sans {
+  font-family: var(--font-nunito_sans);
+  }
+
+  .poppins {
+    font-family: var(--font-poppins);
+  }
+
   pre {
    padding-left: 0!important;
    padding-right: 0!important;
+  }
+
+  .linenumber {
+    padding-right: 0!important;
   }
 
   .bg-glass_light {
