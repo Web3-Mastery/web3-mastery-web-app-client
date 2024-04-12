@@ -38,7 +38,7 @@ function HardhatPostListPage() {
           pageTitle={'Learn Hardhat'}
           pageIntroText={pageIntroText}
         />
-        {allPostFilePaths?.length > 0 ? (
+        {/* {allPostFilePaths?.length > 0 ? (
           <section
             id="platform-provisions-section"
             className="platform-provisions px-3 sm:px-[20px] lg:px-12 grid gap-y-[40px] md:gap-y-[50px] gap-x-[30px] 
@@ -75,11 +75,11 @@ function HardhatPostListPage() {
               );
             })}
           </section>
-        ) : (
-          <section className="pt-[100px] px-3 sm:px-[20px] lg:px-12 text-center text-gray-500 poppins text-base leading-[30px]">
-            No posts added to this category. <br /> Please check back soon... 😊
-          </section>
-        )}
+        ) : ( */}
+        <section className="pt-[100px] px-3 sm:px-[20px] lg:px-12 text-center text-gray-500 poppins text-base leading-[30px]">
+          No posts added to this category. <br /> Please check back soon... 😊
+        </section>
+        {/* )} */}
       </main>
     </MainAppLayout>
   );
