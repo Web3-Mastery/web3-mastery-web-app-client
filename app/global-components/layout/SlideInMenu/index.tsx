@@ -19,7 +19,7 @@ function SlideInMenu() {
       <div className="relative flex items-center">
         <div
           className="nav-bar-icon-wrapper cursor-pointer w-[35px] h-[35px] rounded-full border border-gray-500 z-40 px-[4px] pt-[5px] pb-[4.2px] absolute top-[30px] left-[30px]"
-          onClick={() => dispatch(slideNavOut())}
+          onClick={() => dispatch(slideNavOut())} // add an update here - so as to also close the "learn" pop-up menu as well when ever you close the slide-in menu.
         >
           {/* <HiOutlineBars2 strokeWidth={1.5} className="w-6 h-6 text-black" /> */}
           <HiOutlineXMark className="w-6 h-6 text-black" />

@@ -15,7 +15,7 @@ function NavLinks() {
   }
 
   return (
-    <ul className="relative uppercase font-normal flex flex-col text-center p-4 sm:p-0 w-[300px] xsm:w-[400px] mx-auto mt-[120px] lg:mt-[0] lg:flex-row lg:gap-10 lg:w-full text-[12px]">
+    <ul className="relative mb-[150px] md:mb-0 uppercase font-normal flex flex-col text-center p-4 sm:p-0 w-[300px] xsm:w-[400px] mx-auto mt-[120px] lg:mt-[0] lg:flex-row lg:gap-10 lg:w-full text-[12px]">
       <Link href="/" onClick={() => dispatch(slideNavOut())}>
         <li className="border-b lg:hidden border-gray-300 py-5 lg:border-none lg:py-0">
           My Dashboard
@@ -26,7 +26,11 @@ function NavLinks() {
           Home
         </li>
       </Link>
-
+      <Link href="/posts/blog" onClick={() => dispatch(slideNavOut())}>
+        <li className="border-b border-gray-300 py-5 lg:border-none lg:py-0">
+          Blog
+        </li>
+      </Link>
       <Link href="/posts/tutorials" onClick={() => dispatch(slideNavOut())}>
         <li className="border-b border-gray-300 py-5 lg:border-none lg:py-0">
           Tutorials
@@ -42,7 +46,7 @@ function NavLinks() {
       </li>
       {/* </Link> */}
       <div
-        className={`learn-menu ${showLearnMenu ? 'inline-block' : 'hidden'} card-glass_dark w-[300px] absolute z-20 right-[0] sm:right-[50px] lg:right-[10px] top-[250px] lg:top-[30px] border border-gray-200 rounded-[5px] px-4 py-6`}
+        className={`learn-menu ${showLearnMenu ? 'inline-block' : 'hidden'} card-glass_dark w-[300px] absolute z-20 right-[0] sm:right-[50px] lg:right-[-50px] top-[295px] md:top-[285px] lg:top-[30px] border border-gray-200 rounded-[5px] px-4 py-6`}
       >
         <ul className=" uppercase font-normal flex flex-col text-center sm:mx-auto">
           <Link
@@ -77,11 +81,7 @@ function NavLinks() {
           </button> */}
         </ul>
       </div>
-      <Link href="/posts/blog" onClick={() => dispatch(slideNavOut())}>
-        <li className="border-b border-gray-300 py-5 lg:border-none lg:py-0">
-          Blog
-        </li>
-      </Link>
+
       <Link href="/about" onClick={() => dispatch(slideNavOut())}>
         <li className="border-b border-gray-300 py-5 lg:border-none lg:py-0">
           About
