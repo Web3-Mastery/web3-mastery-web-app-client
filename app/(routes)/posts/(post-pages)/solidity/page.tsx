@@ -1,18 +1,35 @@
 import React from 'react';
-import Link from 'next/link';
-import { HiArrowLongRight } from 'react-icons/hi2';
+import type { Metadata } from 'next';
+// import Link from 'next/link';
+// import { HiArrowLongRight } from 'react-icons/hi2';
 import MainAppLayout from '@/app/global-components/layout/MainAppLayout';
 import PostListPageTitleHeader from '../../components/PostListPageTitleHeader';
 import fs from 'fs';
 import matter from 'gray-matter';
 
+const pageIntroText = `A collection of well ordered and professionally crafted articles/tutorials, teaching everything
+you need, to build secure and efficient smart-contracts with the Solidity programming language. Suitable for
+'veterans' and beginners alike.`;
+
+export const metadata: Metadata = {
+  title: 'Web3 Mastery | Blog',
+  description: pageIntroText,
+  keywords: [
+    'Web3',
+    'Blockchain',
+    'Solidity',
+    'Blockchain development',
+    'Smart contracts',
+    'Hardhat',
+    'Web3 Jobs',
+    'Foundry',
+    'Solana'
+  ]
+};
+
 const basePath = 'content/solidity';
 
 function SolidityPostListPage() {
-  const pageIntroText = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, quam,
-        explicabo porro blanditiis omnis voluptas iure, molestiae cupiditate
-        quibusdam facilis. sit?`;
-
   const files = fs.readdirSync(basePath);
 
   const mdxPosts = files.filter((file) => file.endsWith('.mdx'));

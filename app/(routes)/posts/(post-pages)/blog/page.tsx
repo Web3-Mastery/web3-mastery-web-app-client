@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { HiArrowLongRight } from 'react-icons/hi2';
 import MainAppLayout from '@/app/global-components/layout/MainAppLayout';
@@ -6,14 +7,29 @@ import PostListPageTitleHeader from '../../components/PostListPageTitleHeader';
 import fs from 'fs';
 import matter from 'gray-matter';
 
+const pageIntroText = `A list of carefully and professionally written articles to keep you
+  current with trends and happening in the global crypto space, and the world of web3/blockchain engineering.`;
+
+export const metadata: Metadata = {
+  title: 'Web3 Mastery | Blog',
+  description: pageIntroText,
+  keywords: [
+    'Web3',
+    'Blockchain',
+    'Solidity',
+    'Blockchain development',
+    'Smart contracts',
+    'Hardhat',
+    'Web3 Jobs',
+    'Foundry',
+    'Solana'
+  ]
+};
+
 const basePath = 'content/blog';
 // const pageId = 'blog';
 
 function BlogPostListPage() {
-  const pageIntroText = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, quam,
-        explicabo porro blanditiis omnis voluptas iure, molestiae cupiditate
-        quibusdam facilis. sit?`;
-
   const files = fs.readdirSync(basePath);
 
   const mdxPosts = files.filter((file) => file.endsWith('.mdx'));

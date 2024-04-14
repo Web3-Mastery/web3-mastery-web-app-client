@@ -10,7 +10,7 @@ import fs from 'fs';
 export const metadata: Metadata = {
   title: 'Web3 Mastery',
   description:
-    'The "minimalist" web3/blockchain education platform that turns you into a web3/blockchain master.',
+    'The "minimalist" web3 education platform that turns you into a blockchain master.',
   keywords: [
     'Web3',
     'Blockchain',
@@ -98,7 +98,7 @@ function HomePage() {
                     </div>
                   </div>
                   <p className={`m-0 w-full text-sm opacity-50`}>
-                    {category.categoryBrief}
+                    {`${category.categoryBrief.slice(0, 150)}...`}
                   </p>
                 </Link>
               );
@@ -119,7 +119,7 @@ function HomePage() {
                     <div
                       className={`mb-3 text-[20px] font-semibold flex items-start justify-between gap-5 sm:gap-8`}
                     >
-                      <span className="post-title poppins font-thin">
+                      <span className="post-title poppins font-thin md:min-h-[140px]">
                         {each.postTitle}
                       </span>
                       <div className="mt-2 inline-flex items-center gap-2 transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
@@ -127,8 +127,10 @@ function HomePage() {
                         <HiArrowLongRight />
                       </div>
                     </div>
-                    <p className={`m-0 w-full text-sm opacity-50 post-brief`}>
-                      {each.postBrief}
+                    <p
+                      className={`m-0 w-full text-[14px] opacity-50 post-brief`}
+                    >
+                      {each?.postBrief}
                     </p>
                   </section>
                   <div>

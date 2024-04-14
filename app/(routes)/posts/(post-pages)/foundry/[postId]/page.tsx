@@ -1,5 +1,5 @@
 // 'use client';
-
+import type { Metadata } from 'next';
 import MainAppLayout from '@/app/global-components/layout/MainAppLayout';
 import PostWrapper from '@/app/global-components/PostWrapper';
 import PageNavigator from '../../../components/PageNavigator';
@@ -15,7 +15,49 @@ import AboutAuthorSection from '../../../components/AboutAuthorSection';
 export const dynamicParams = true;
 const basePath = 'content/foundry';
 
-async function PostPage({ params }: any) {
+type Props = {
+  params: { postId: string };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // read route params
+  const { postId } = params;
+
+  const files = fs.readdirSync(basePath);
+
+  const mdxPosts = files.filter((file) => file.endsWith('.mdx'));
+
+  const currentPostFilePath = mdxPosts.find((each) => {
+    // remove initial number and hyphen in from of each post name
+    return each.slice(2).replace(/\s/g, '-').split('.')[0] == postId;
+  });
+
+  const fileContent = fs.readFileSync(
+    `${basePath}/${currentPostFilePath}`,
+    'utf8'
+  );
+
+  const matterResult = matter(fileContent);
+  const { postTitle, postBrief } = matterResult.data;
+
+  return {
+    title: postTitle,
+    description: postBrief,
+    keywords: [
+      'Web3',
+      'Blockchain',
+      'Solidity',
+      'Blockchain development',
+      'Smart contracts',
+      'Hardhat',
+      'Web3 Jobs',
+      'Foundry',
+      'Solana'
+    ]
+  };
+}
+
+async function PostPage({ params }: Props) {
   const components = presetComponents;
 
   const { postId } = params;

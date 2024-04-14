@@ -9,7 +9,7 @@ import PostWrapper from '@/app/global-components/PostWrapper';
 export const metadata: Metadata = {
   title: 'About Web3 Mastery',
   description:
-    'The "minimalist" web3/blockchain education platform that turns you into a web3/blockchain master.',
+    'The "minimalist" web3 education platform that turns you into a blockchain master.',
   keywords: [
     'Web3',
     'Blockchain',
@@ -36,47 +36,57 @@ function AboutPage() {
         <section className="sm:mt-[30px]">
           <PostWrapper>
             <ParagraphElement>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem
-              dolorum necessitatibus dolor, nihil natus recusandae cumque totam
-              neque quod veniam earum expedita illum corporis velit. Praesentium
-              at labore ipsam odit quia. Sint, doloribus ex corrupti dolores
-              tempore velit maxime ut, quidem quis sapiente sit neque quibusdam
-              praesentium eius inventore quasi pariatur consequatur
-              exercitationem aperiam autem maiores? Sequi, quas eius. Quod
-              impedit modi repellat porro iusto, sed quo, aperiam error esse
-              dolore vitae dolorem distinctio cupiditate in culpa quae tempore
-              debitis magni. Unde architecto est fugiat ab dignissimos harum
-              ullam pariatur ex iste. Obcaecati et accusantium fugiat
-              consectetur possimus vitae ea.
+              Since coming into web3 and becoming a blockchain developer over a
+              year ago, I've continued to be fascinated by the ingenious
+              technology that powers this(web3) space - I've remained passionate
+              about web3 and blockchain technology.
             </ParagraphElement>
             <ParagraphElement>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem
-              dolorum necessitatibus dolor, nihil natus recusandae cumque totam
-              neque quod veniam earum expedita illum corporis velit. Praesentium
-              at labore ipsam odit quia. Sint, doloribus ex corrupti dolores
-              tempore velit maxime ut, quidem quis sapiente sit neque quibusdam
-              praesentium eius inventore quasi pariatur consequatur
-              exercitationem aperiam autem maiores? Sequi, quas eius. Quod
-              impedit modi repellat porro iusto, sed quo, aperiam error esse
-              dolore vitae dolorem distinctio cupiditate in culpa quae tempore
-              debitis magni. Unde architecto est fugiat ab dignissimos harum
-              ullam pariatur ex iste. Obcaecati et accusantium fugiat
-              consectetur possimus vitae ea.
+              Despite all the passion and love for the space, my engagements and
+              continued growth as a full-stack(web2) software engineer continued
+              to create a gap between me and web3.
             </ParagraphElement>
             <ParagraphElement>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem
-              dolorum necessitatibus dolor, nihil natus recusandae cumque totam
-              neque quod veniam earum expedita illum corporis velit. Praesentium
-              at labore ipsam odit quia. Sint, doloribus ex corrupti dolores
-              tempore velit maxime ut, quidem quis sapiente sit neque quibusdam
-              praesentium eius inventore quasi pariatur consequatur
-              exercitationem aperiam autem maiores? Sequi, quas eius. Quod
-              impedit modi repellat porro iusto, sed quo, aperiam error esse
-              dolore vitae dolorem distinctio cupiditate in culpa quae tempore
-              debitis magni. Unde architecto est fugiat ab dignissimos harum
-              ullam pariatur ex iste. Obcaecati et accusantium fugiat
-              consectetur possimus vitae ea.
+              So I decided to change that in 2024 by becoming a web3-heavy
+              full-stack software engineer.
             </ParagraphElement>
+            <ParagraphElement>
+              After some serious refresher and upgrading of my web3/blockchain
+              skils in 2024, I was certainly ready for jobs/opportunities in the
+              web3 space - especially thanks to my gift of brilliance, and my
+              prior software engineering skills/experience in web2. Hence, as a
+              way to both keep me continuously engaged in the space - building a
+              better portfolio, while also continuing to show and share my web3
+              expertise, I decided to build Web3 Mastery.
+            </ParagraphElement>
+            <ParagraphElement>
+              Beyond all that, building Web3 Mastery aligns with my
+              tech-obsession of building and scaling startups
+            </ParagraphElement>
+            <ParagraphElement>
+              Web3 Mastery is a web3 education platform that aims to help build
+              the next generation of blockchain developers and web3 netizens. It
+              is a platform on a mission to build a base where all categories of
+              blockchain/web3 folks - veterans, mid-level folks, and beginners
+              alike, will readily come on - to learn and to also find and share
+              opportunities.
+            </ParagraphElement>
+            <ParagraphElement>
+              For now, you can explore(learn and get informed) from an array of
+              awesome articles. But soon(as more features continuing to ship-in
+              fast), users will be able to access more awesomeness like job
+              opportunities(smart-contract engineering, bug-bounties, audits
+              etcetera), more features to foster better learning, and more.
+            </ParagraphElement>
+            <ParagraphElement>Thanks for being here frens!</ParagraphElement>
+            <ParagraphElement>
+              See you inside Web3 Mastery - the button just below should help.
+            </ParagraphElement>
+            <div className="text-3xl">🤓</div>
+            <div className="italic mt-10 text-[13px]">
+              - Andrew James Okpainmo
+            </div>
+
             <Link
               href="/#platform-provisions-section"
               className="mt-10 flex justify-center"
