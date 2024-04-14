@@ -5,6 +5,7 @@ import NavLinks from '../NavLinks';
 import { HiOutlineXMark } from 'react-icons/hi2';
 import { useSelector, useDispatch } from 'react-redux';
 import { slideNavOut } from '@/app/rtk-base/slices/navToggleSlice';
+import { showModal } from '@/app/rtk-base/slices/modalSlice';
 
 function SlideInMenu() {
   // @ts-ignore
@@ -24,7 +25,13 @@ function SlideInMenu() {
           {/* <HiOutlineBars2 strokeWidth={1.5} className="w-6 h-6 text-black" /> */}
           <HiOutlineXMark className="w-6 h-6 text-black" />
         </div>
-        <button className="bg-slate-950 px-4 py-4 uppercase text-normal text-white absolute top-[30px] right-[30px] text-[10px]">
+        <button
+          className="bg-slate-950 px-4 py-4 uppercase text-normal text-white absolute top-[30px] right-[30px] text-[10px]"
+          onClick={() => {
+            dispatch(showModal());
+            dispatch(slideNavOut());
+          }} // add an update here - so as to also close the "learn" pop-up menu as well when ever you close the slide-in menu.
+        >
           Connect With Wallet
         </button>
       </div>

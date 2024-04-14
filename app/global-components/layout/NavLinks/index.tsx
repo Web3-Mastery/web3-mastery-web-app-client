@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { slideNavOut } from '@/app/rtk-base/slices/navToggleSlice';
+import { showModal } from '@/app/rtk-base/slices/modalSlice';
 
 function NavLinks() {
-  //@ts-ignore
-  const { isNavSlidIn } = useSelector((store) => store.navToggle);
   const [showLearnMenu, setShowLearnMenu] = useState(false);
 
   const dispatch = useDispatch();
@@ -16,11 +15,17 @@ function NavLinks() {
 
   return (
     <ul className="relative mb-[150px] md:mb-0 uppercase font-normal flex flex-col text-center p-4 sm:p-0 w-[300px] xsm:w-[400px] mx-auto mt-[120px] lg:mt-[0] lg:flex-row lg:gap-10 lg:w-full text-[12px]">
-      <Link href="/" onClick={() => dispatch(slideNavOut())}>
-        <li className="border-b lg:hidden border-gray-300 py-5 lg:border-none lg:py-0">
+      <div
+        // href="/"
+        onClick={() => {
+          dispatch(showModal());
+          dispatch(slideNavOut());
+        }}
+      >
+        <li className="border-b lg:hidden border-gray-300 py-5 lg:border-none lg:py-0 cursor-pointer">
           My Dashboard
         </li>
-      </Link>
+      </div>
       <Link href="/" onClick={() => dispatch(slideNavOut())}>
         <li className="border-b border-gray-300 py-5 lg:border-none lg:py-0">
           Home

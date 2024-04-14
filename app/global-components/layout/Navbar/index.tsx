@@ -2,17 +2,19 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Logo from '../../../assets/images/web3-mastery-logo.png';
 import NavLinks from '../NavLinks';
 import MenuToggleButtonForMobile from './components/MenuToggleButtonForMobile';
 import MenuToggleButtonForDesktop from './components/MenuToggleButtonForDesktop';
+import { showModal } from '@/app/rtk-base/slices/modalSlice';
 
 // import { HiOutlineBars2 } from 'react-icons/hi2';
 
 function Navbar() {
   //@ts-ignore
   const { isMenuOn } = useSelector((store) => store.navToggle);
+  const dispatch = useDispatch();
 
   return (
     <nav
@@ -39,15 +41,24 @@ function Navbar() {
             className={`pop-up-menu ${isMenuOn ? 'inline-block' : 'hidden'} text-[12px] card-glass_dark bg-glass_light w-[300px] absolute z-20 right-[10px] top-[50px] border border-gray-200 rounded-[5px] px-4 py-6`}
           >
             <ul className="uppercase font-normal flex flex-col text-center sm:mx-auto">
-              <Link href="/">
+              <div
+                onClick={() => dispatch(showModal())}
+                className="cursor-pointer"
+              >
                 <li className="border-b border-gray-300 py-5">My Dashboard</li>
-              </Link>
-              <Link href="/">
+              </div>
+              <div
+                onClick={() => dispatch(showModal())}
+                className="cursor-pointer"
+              >
                 <li className="border-b border-gray-300 py-5">
                   Sign up / Log in / Log out
                 </li>
-              </Link>
-              <button className="bg-slate-950 px-4 py-4 uppercase text-normal text-white mt-6">
+              </div>
+              <button
+                className="bg-slate-950 px-4 py-4 uppercase text-normal text-white mt-6 cursor-pointer"
+                onClick={() => dispatch(showModal())}
+              >
                 Connect With Wallet
               </button>
             </ul>
