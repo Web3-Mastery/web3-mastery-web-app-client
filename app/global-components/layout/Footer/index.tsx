@@ -1,34 +1,60 @@
-import React from 'react';
-import { RxPaperPlane } from 'react-icons/rx';
+'use client';
+
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Link from 'next/link';
 import IconWrapper from './IconWrapper';
 import { IoLogoTwitter, IoLogoYoutube, IoLogoLinkedin } from 'react-icons/io5';
 import { BiLogoDiscordAlt } from 'react-icons/bi';
 import { BiLogoGithub } from 'react-icons/bi';
+import FooterForm from './FooterForm';
 
 function Footer() {
+  const [showInputErrorPopUp, setShowInputErrorPopUp] = useState(false);
+  const [showErrorPopUp, setShowErrorPopUp] = useState(false);
+  const [showSuccessPopUp, setShowSuccessPopUp] = useState(false);
+
+  const { subscriptionSuccessState } = useSelector(
+    // @ts-ignore
+    (store) => store.newsletter
+  );
+
   return (
     <footer className="px-3 sm:px-16 pt-40">
-      <form
-        action="#"
-        className="relative sm:text-[14px] w-full sm:w-[400px] sm:mx-auto text-gray-400 px-5"
-      >
-        <div className="input-group flex flex-col w-full">
-          {/* <label htmlFor="email">Email</label> */}
-          <input
-            className="bg-glass_light pl-4 pr-16 py-5 outline-none rounded-[3px] border border-gray-300"
-            type="email"
-            required
-            placeholder="subscribe to the Web3 Mastery newsletter"
-            // value={loginForm.email}
-            id="email"
-          />
+      {!showErrorPopUp && !showInputErrorPopUp && !subscriptionSuccessState && (
+        <FooterForm
+          setShowInputErrorPopUp={setShowInputErrorPopUp}
+          setShowErrorPopUp={setShowErrorPopUp}
+          // setShowSuccessPopUp={setShowSuccessPopUp}
+        />
+      )}
+
+      <div className="subscription-process-notification text-[12px] w-full sm:w-[500px] mx-auto">
+        <div
+          className={`${!showErrorPopUp && 'hidden'} p-4 bg-red-50 text-red-500 font-extralight`}
+        >
+          Sorry, an error ocurred. Please try again!
         </div>
-        <button className="rounded-full w-[35px] h-[35px] absolute right-9 top-[13px] bg-none hover:bg-slate-950 border border-gray-500  text-slate-950 hover:text-white  py-[3px] pl-[9px] pr-[7px]">
-          <RxPaperPlane className="text-[16px]" />
-        </button>
-      </form>
-      <section className="footer-links flex flex-wrap gap-4 sm:gap-8 justify-center mt-20 font-light text-gray-400 poppins text-[12px] uppercase">
+        <div
+          className={`${!showInputErrorPopUp && 'hidden'} p-4 bg-red-50 text-red-500 font-extralight`}
+        >
+          Please provide a valid email address.
+        </div>
+        <div
+          className={`${!subscriptionSuccessState && 'hidden'} p-4 bg-green-50 text-green-500 font-light`}
+        >
+          You're in! <br />
+          <br /> Please check you email inbox for a personal welcome message
+          from me(Andrew James Okpainmo). <br />
+          <br />
+          Do note, that every subsequent(newsletter) email, will come from Web3
+          Mastery. <br />
+          <br /> Cheers!!! <br />
+          <br />
+          <span className="text-2xl">🤓</span>
+        </div>
+      </div>
+      <section className="footer-links flex flex-wrap gap-4 sm:gap-8 justify-center mt-20 font-light text-gray-400 poppins text-[10px] uppercase">
         <Link href="/posts/blog">Blog</Link>
         <Link href="/posts/tutorials">Tutorials</Link>
         <Link href="/posts/solidity">Learn Solidity</Link>
