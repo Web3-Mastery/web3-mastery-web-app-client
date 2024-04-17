@@ -54,7 +54,7 @@ function Footer() {
           <span className="text-2xl">🤓</span>
         </div>
       </div>
-      <section className="footer-links flex flex-wrap gap-4 sm:gap-8 justify-center mt-20 font-light text-gray-400 poppins text-[10px] uppercase">
+      <section className="footer-links flex flex-wrap gap-4 sm:gap-8 justify-center mt-20 font-light text-gray-400 poppins text-[12px] uppercase">
         <Link href="/posts/blog">Blog</Link>
         <Link href="/posts/tutorials">Tutorials</Link>
         <Link href="/posts/solidity">Learn Solidity</Link>
