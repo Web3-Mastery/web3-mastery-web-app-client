@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 // const serverBaseUrl = process.env.BACK_END_BASE_URL;
-const serverBaseUrl = 'https://api.web3mastery.org';
-// const serverBaseUrl = 'http://localhost:8080';
+// const serverBaseUrl = 'https://api.web3mastery.org';
+const serverBaseUrl = 'http://localhost:8080';
 
 type defaultStateSpecs = {
   isSubscriptionInProgress: boolean;
