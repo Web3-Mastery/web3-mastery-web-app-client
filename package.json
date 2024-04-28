@@ -11,7 +11,6 @@
     "format": "npx prettier . --write",
     "prepare": "husky"
   },
-  "type": "module",
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@mdx-js/loader": "^3.0.1",
