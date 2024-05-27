@@ -1,0 +1,188 @@
+---
+postTitle: '01: Introduction To Rust'
+postDate: 'May 6, 2024'
+postIndex: 0
+postBrief: "An overview article that introduces the Rust programming language, and the Web3 Mastery 'Learn Rust' curriculum. 
+Explore to gain inisghful information about Rust, as you get prepared to dive deeper into the awesome world of programming 
+with Rust."
+postThumbnailUrl: '/post-image_22.png'
+authorPhotoUrl: '/aj-okpainmo_dp.jpg'
+authorName: Andrew James Okpainmo
+authorBio: 'Andrew James Okpainmo is a fullstack web3 engineer who is passionate about web3 and blockchain technology.
+He loves building and scaling startups, and currently works as a freelance software engineer. He is also the founder
+and lead-writer/editor at Web3 Mastery.'
+postTags: ['blockchain-development', 'solidity', 'smart-contracts', 'software-development', 'rust']
+postSlug: "01_introduction-to-rust"
+authorSocials: ['https://twitter.com/AJ_Okpainmo', 'https://www.linkedin.com/in/okpainmo-andrew/', 'https://github.com/Okpainmo']
+---
+
+![post banner](/post-image_22.png)
+*screenshot credit: [https://www.rust-lang.org/](https://www.rust-lang.org/)*
+
+[Rust](https://www.rust-lang.org/) is a low-level(systems) programming language that is currently taking the global programming
+ecosystem by storm. 
+
+In the [Stack Overflow Developer Survey of 2023](https://survey.stackoverflow.co/2023/), 
+Rust emerged as the most admired programming language by developers. In 
+[the same survey of just a year prior(2022)](https://survey.stackoverflow.co/2022), Rust was on it's 7th time as the most loved 
+programming language. 
+
+![stack overflow developer survey screenshot showing rust at the most admired programming language](/post-image_23.png)
+*screenshot credit: [Stack Overflow Developer Survey 2023](https://survey.stackoverflow.co/2023/#technology-admired-and-desired)*
+
+![stack overflow developer survey screenshot showing rust at the most loved/wanted programming language](/post-image_24.png)
+*screenshot credit: [Stack Overflow Developer Survey 2022](https://survey.stackoverflow.co/2022#technology-most-loved-dreaded-and-wanted)*
+
+Indeed, Rust is one of the most impressive programming languages in the market currently.
+
+> In this article, I'll be sharing as much as possible(as an introduction) about Rust, to get you 
+informed, prepared, and thrilled-up as you proceed with this awesome Rust tutorial series.
+
+## More About Rust.
+
+Rust is a modern low-level programming language that is designed to provide high performance/speed and productivity, 
+while also ensuring safety and reliabilty. It is a general-purpose programming language that can be used across different industries.
+Rust offers a variety of features that makes it a great choice for a wide-range of projects.
+
+Originally a personal project created by [Graydon Hoare](https://www.crunchbase.com/person/graydon-hoare) in 2006, Rust gained sponsorship 
+from Mozilla in 2009. Since then, the stellar programming language continues to make giant strides while also winning many hearts. After it's 
+first stable release in 2015, Rust has been adopted by top companies including: Amazon, Discord, Dropbox, Google, Meta, and Microsoft.
+
+> As a proff of it super-impressive abilities, Rust became the first programming language aside C and Assemby to be supported in the 
+> development of the **Linux Kernel** in December of 2022.
+
+## Features/Awesomeness Of Rust.
+
+Below are some awesome and super-impressive features and provisions that makes the Rust programming language stand out.
+
+### 1. Rust Is Statically And Strongly Typed.
+
+Unlike programming languages like [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [Python](https://www.python.org/), 
+Rust is both statically typed, and strongly typed. This means, it insists that the data type for every variable must be known at compile 
+time(static typing), and enforces restrictions on converting between data types(strong typing).
+
+### 2. Compiles to Machine code.
+
+Thanks to the Rust compiler, Rust code compiles into binary executable files(machine code), which 
+makes it suitable for hardware programming. This also enables it to be a great fit for programming low-latency systems that require 
+extreme speed, efficiency and high security.
+
+### 3. Memory Safety Without A Garbage Collector.
+
+Rust offers a very impressive level of programming safety - avoiding the security 
+vulnerabilities and memory shortcomings of other system-level languages like [C](https://en.wikipedia.org/wiki/C_(programming_language)) and 
+[C++](https://en.wikipedia.org/wiki/C%2B%2B). Rust achieves it's impressive memory safety
+by using the concept of  "ownership". 
+
+> [Ownership](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html) is considered 
+to be Rust's most unique feature, it enables Rust to ensure memory safety without needing a garbage collector.
+
+### 4. Establishing a balance between powerful technical capacity(low-level complexity) and a great developer experience(high-level convenience).
+
+Rust is an awesome programming language that combines the high-level ergonomics that make for a great developer experience, with 
+low-level control - a relieving features that other "complex" low-level programming languages have long been unable to provide. 
+
+> Rust provides the option to control low-level details (such as memory usage) without all the hassle traditionally associated with 
+such control.
+
+### 5. High Speed, Efficiency And Reliability. 
+
+Rust is well known for it's high speed. Thanks to it's memory-safety prowess and it's strict error checks(thanks 
+to a very impressive compiler), Rust is also known to be highly reliable and efficient. It is designed to naturally guide 
+the programmer towards reliable code that is efficient in terms of speed and memory usage.
+
+### 6. Productivity enhancement.
+
+In terms of productivity enhancements, Rust is very impressive. From having a great documentation, to it's friendly compiler with very 
+useful and detailed error messages and more, Rust is a great choice if productivity is you concern.
+
+Other productivity enhancement reasons for trying out Rust include: 
+
+- An increasingly loyal community/fan-base to help out when you're stuck.
+- An integrated package manager called [Cargo](https://doc.rust-lang.org/cargo/)(think [NPM](https://www.npmjs.com/) for Javascript).
+-   Impressive multi-editor support 
+- An auto-formatter([rustfmt](https://github.com/rust-lang/rustfmt)).
+
+And more...
+
+## Rust Versions.
+
+Since it's first stable release in 2015, Rust have had many new version releases.
+
+Fortunately, newer [Rust versions](https://releases.rs/) are backward compatible with previous ones. Hence, even though newer version 
+might introduce new features, fixes, and/or enhancements, older versions should still work just fine.
+
+> At the time of writing this article, the latest Rust version(s) are <mark>Version 1.79.0(Beta) and Version 1.78.0(stable)</mark>.
+Hence most or all of this tutorial series will be built with the latest stable version(Version 1.78.0).
+
+## Use cases for Rust.
+
+Versatility And a wide range of application are some other massive advantages of Rust.
+
+Beyond low/system level work, Rust can be applied to engineer different systems. It is flexible and expressive enough, hence can 
+be used to build CLI based applications, web servers and networking services. Rust can also be used in [WebAssembly(WASM)](https://webassembly.org/) 
+and embedded systems engineering. 
+
+> Best of all(most importantly for us here at Web3 Mastery), Rust is also used extensively in the 
+world of web3/blockchain engineering.
+
+Rust enables you to build skills that transfer from one domain to another. For example, you can learn Rust by writing a web app, 
+and then proceed to applying those same skills while working on a Raspberry pi machine.
+
+## Rust Adoption And Support.
+
+Rust is used by different top companies across the world. Companies like: Amazon, Microsoft, Meta(formerly Facebook), Dropbox, 
+Cloudflare and Mozilla have all adopted Rust for use in their projects.
+
+Rust is currently one of the most desired and admired programming languages in the world. It has also been tipped to become the default build 
+language for Javascript infrastructure/build tools.
+
+With a great documentation and a supportive community/ecosystem, Rust continues to be a very promising programming language.
+
+## Rust And Web3.
+
+As earlier stated, Rust is used extensively in web3/blockchain engineering. It is currently the native/default language for 
+programming smart contracts on the [Solana blockchain](https://solana.com/).
+
+Aside it's direct application to web3, Rust can also be heavily applied(due to it's strategic advantagies) in building blockchain
+infrastructure for web3.
+
+> This turorial series will wrap up by guiding you into building web3/blockchain related projects with Rust.
+
+## Proceeding With This Tutorial Series.
+
+After all the impressive things you've learnt about Rust in this article, I suppose you're the more excited about proceeding with this 
+tutorial series.
+
+### Requirements.
+
+To make the best out of this tutorial series, it is expected that you at least have some previous programming experience, with 
+**basic understanding** of different programming concepts like variables, functions, data-types, and more. It'll be even more perfect
+if you know [Typescript](https://www.typescriptlang.org) or if you have previous experience with a fully(strongly and statically) typed programming language.
+
+
+> It is very possible to follow through even if you're a total newbie/beginner. But following this series will be a lot more favourable if you
+already have previous programming experience with at least one programming language.
+>
+>Eitherway, you do not need to have any previous experience working with Rust.
+
+This series(thanks to a professionally crafted curriculum) will cover all the relevant aspects that you'll need to 
+become very comfortable with buiding systems in Rust. The series will wrap up with introducing you to building web3 related projects
+with Rust.
+
+The series will also follow through(in a thorough fashion) with solid and relevant examples/projects to help you learn and 
+master every shared concept as perfectly as possible.
+
+I wish you a great learning experience.
+
+> Do well to check and explore our other courses/tutorial series on [Solidity](https://www.web3mastery.org/posts/solidity), 
+[Hardhat](https://www.web3mastery.org/posts/hardhat), and [Foundry](https://www.web3mastery.org/posts/foundry), I'm confident that you'll
+love and find so much value in them. 
+>
+>Also do not forget to regularly check out our [tutorials](https://www.web3mastery.org/posts/tutorials) - where you'll find robust 
+and top-notch project-based web3 tutorials that are thorough and complete enough to help you build a robust 
+blockchain developer portfolio.
+
+See you in the next article.
+
+Cheers!
