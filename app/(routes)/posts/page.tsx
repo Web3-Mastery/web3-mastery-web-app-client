@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import MainAppLayout from '@/app/global-components/layout/MainAppLayout';
-import ParagraphElement from '@/app/global-components/Paragraph';
+import ParagraphElement from '@/app/global-components/ParagraphElement';
 import PostWrapper from '@/app/global-components/PostWrapper';
 import AuthorPhoto from '../../assets/images/web3-mastery-logo.png';
 

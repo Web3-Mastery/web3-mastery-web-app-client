@@ -1,18 +1,18 @@
 import React from 'react';
 import type { Metadata } from 'next';
-// import Link from 'next/link';
-// import { HiArrowLongRight } from 'react-icons/hi2';
+import Link from 'next/link';
+import { HiArrowLongRight } from 'react-icons/hi2';
 import MainAppLayout from '@/app/global-components/layout/MainAppLayout';
 import PostListPageTitleHeader from '../../components/PostListPageTitleHeader';
 import fs from 'fs';
 import matter from 'gray-matter';
 
 const pageIntroText = `Explore from a list of top-class Foundry articles and tutorials carefully and professionally crafted to help
-you master everything you need to know about web3 engineering with Foundry. Suitable for
-'veterans' and beginners alike.`;
+  you master everything you need to know about web3 engineering with Foundry. Suitable for all categories of web3 professional - beginners
+   mid-level folks and 'veterans' alike.`;
 
 export const metadata: Metadata = {
-  title: 'Web3 Mastery | Blog',
+  title: 'Web3 Mastery | Learn Foundry',
   description: pageIntroText,
   keywords: [
     'Web3',
@@ -53,7 +53,7 @@ function FoundryPostListPage() {
           pageTitle={'Learn Foundry'}
           pageIntroText={pageIntroText}
         />
-        {/* {allPostFilePaths?.length > 0 ? (
+        {allPostFilePaths?.length > 0 ? (
           <section
             id="platform-provisions-section"
             className="platform-provisions px-3 sm:px-[20px] lg:px-12 grid gap-y-[40px] md:gap-y-[50px] gap-x-[30px] 
@@ -90,11 +90,11 @@ function FoundryPostListPage() {
               );
             })}
           </section>
-        ) : ( */}
-        <section className="pt-[100px] px-3 sm:px-[20px] lg:px-12 text-center text-gray-500 poppins text-base leading-[30px]">
-          No posts added to this category. <br /> Please check back soon... 😊
-        </section>
-        {/* )} */}
+        ) : (
+          <section className="pt-[100px] px-3 sm:px-[20px] lg:px-12 text-center text-gray-500 poppins text-base leading-[30px]">
+            No posts added to this category. <br /> Please check back soon... 😊
+          </section>
+        )}
       </main>
     </MainAppLayout>
   );

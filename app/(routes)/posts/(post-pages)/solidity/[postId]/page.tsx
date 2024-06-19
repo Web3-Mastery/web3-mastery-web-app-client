@@ -68,7 +68,7 @@ async function PostPage({ params }: Props) {
   const mdxPosts = files.filter((file) => file.endsWith('.mdx'));
 
   const currentPostFilePath = mdxPosts.find((each) => {
-    // remove initial number and hyphen in from of each post name
+    // remove the initial number and hyphen in front of each post name
     return each.slice(2).replace(/\s/g, '-').split('.')[0] == postId;
   });
 

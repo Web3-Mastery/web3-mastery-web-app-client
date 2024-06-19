@@ -7,17 +7,19 @@ import PostListPageTitleHeader from '../../components/PostListPageTitleHeader';
 import fs from 'fs';
 import matter from 'gray-matter';
 
-const pageIntroText = `A collection of raw, top-class web3/blockchain development tutorials, carefully and 
-  professionally written to help you master blockchain development. All tutorials are suitable for all
-  categories of web3 enthusiasts - beginners, mid-level folks and 'veterans' alike.`;
+const pageIntroText = `A list of well-crafted and top-class Rust tutorials, carefully and professionally written in line with 
+  a robust curriculum, to help you master everything you need, to start building projects(especially web3 projects and smart-contracts)
+  with the Rust programming language. The curriculum is suitable for all categories of web3 professionals.`;
 
 export const metadata: Metadata = {
-  title: 'Web3 Mastery | Tutorials',
+  title: 'Web3 Mastery | Learn Rust',
   description: pageIntroText,
   keywords: [
     'Web3',
     'Blockchain',
     'Solidity',
+    'Rust',
+    'Cargo',
     'Blockchain development',
     'Smart contracts',
     'Hardhat',
@@ -27,9 +29,11 @@ export const metadata: Metadata = {
   ]
 };
 
-const basePath = 'content/tutorials';
+const basePath = 'content/rust';
 
-function TutorialsPostListPage() {
+function HardhatPostListPage() {
+  // const folder = basePath + '/';
+
   const files = fs.readdirSync(basePath);
 
   const mdxPosts = files.filter((file) => file.endsWith('.mdx'));
@@ -50,7 +54,7 @@ function TutorialsPostListPage() {
     <MainAppLayout>
       <main>
         <PostListPageTitleHeader
-          pageTitle={'Tutorials'}
+          pageTitle={'Learn Rust'}
           pageIntroText={pageIntroText}
         />
         {allPostFilePaths?.length > 0 ? (
@@ -63,7 +67,7 @@ function TutorialsPostListPage() {
               return (
                 <Link
                   key={each.postSlug}
-                  href={`/posts/tutorials/${each.postSlug.replace(/\s/g, '-').toLowerCase()}`}
+                  href={`/posts/rust/${each.postSlug.replace(/\s/g, '-').toLowerCase()}`}
                   className="card-glass_dark flex flex-col justify-between group rounded-lg border border-gray-300 px-5 py-4 min-h-[220px]"
                 >
                   <section>
@@ -100,4 +104,4 @@ function TutorialsPostListPage() {
   );
 }
 
-export default TutorialsPostListPage;
+export default HardhatPostListPage;

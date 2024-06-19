@@ -7,12 +7,11 @@ import PostListPageTitleHeader from '../../components/PostListPageTitleHeader';
 import fs from 'fs';
 import matter from 'gray-matter';
 
-const pageIntroText = `A collection of raw, top-class web3/blockchain development tutorials, carefully and 
-  professionally written to help you master blockchain development. All tutorials are suitable for all
-  categories of web3 enthusiasts - beginners, mid-level folks and 'veterans' alike.`;
+const pageIntroText = `A comprehensive tutorial series for learning smart contract development with Anchor - Solana's Sealevel 
+run-time framework.`;
 
 export const metadata: Metadata = {
-  title: 'Web3 Mastery | Tutorials',
+  title: 'Web3 Mastery | Learn Solana Anchor',
   description: pageIntroText,
   keywords: [
     'Web3',
@@ -23,13 +22,15 @@ export const metadata: Metadata = {
     'Hardhat',
     'Web3 Jobs',
     'Foundry',
-    'Solana'
+    'Solana',
+    'Anchor'
   ]
 };
 
-const basePath = 'content/tutorials';
+const basePath = 'content/anchor';
+// const pageId = 'blog';
 
-function TutorialsPostListPage() {
+function BlogPostListPage() {
   const files = fs.readdirSync(basePath);
 
   const mdxPosts = files.filter((file) => file.endsWith('.mdx'));
@@ -50,9 +51,10 @@ function TutorialsPostListPage() {
     <MainAppLayout>
       <main>
         <PostListPageTitleHeader
-          pageTitle={'Tutorials'}
+          pageTitle={'Learn Solana Anchor'}
           pageIntroText={pageIntroText}
         />
+
         {allPostFilePaths?.length > 0 ? (
           <section
             id="platform-provisions-section"
@@ -63,7 +65,7 @@ function TutorialsPostListPage() {
               return (
                 <Link
                   key={each.postSlug}
-                  href={`/posts/tutorials/${each.postSlug.replace(/\s/g, '-').toLowerCase()}`}
+                  href={`/posts/anchor/${each.postSlug.replace(/\s/g, '-').toLowerCase()}`}
                   className="card-glass_dark flex flex-col justify-between group rounded-lg border border-gray-300 px-5 py-4 min-h-[220px]"
                 >
                   <section>
@@ -100,4 +102,4 @@ function TutorialsPostListPage() {
   );
 }
 
-export default TutorialsPostListPage;
+export default BlogPostListPage;

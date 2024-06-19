@@ -1,5 +1,4 @@
 // 'use client';
-
 import type { Metadata } from 'next';
 import MainAppLayout from '@/app/global-components/layout/MainAppLayout';
 import PostWrapper from '@/app/global-components/PostWrapper';
@@ -14,7 +13,7 @@ import AboutAuthorSection from '../../../components/AboutAuthorSection';
 
 // below import is nextjs specific
 export const dynamicParams = true;
-const basePath = 'content/tutorials';
+const basePath = 'content/rust';
 
 type Props = {
   params: { postId: string };
@@ -102,6 +101,8 @@ async function PostPage({ params }: Props) {
     return each;
   });
 
+  // console.log(allPostFilePaths);
+
   const allPostFileContent = allPostFilePaths.map((each) => {
     const fileContent = fs.readFileSync(`${basePath}/${each}`, 'utf8');
 
@@ -134,8 +135,8 @@ async function PostPage({ params }: Props) {
         <PageNavigator
           nextTitle={nextPostData?.postTitle}
           previousTitle={previousPostData?.postTitle}
-          previousPostRoute={`/posts/tutorials/${previousPostData?.postSlug}`}
-          nextPostRoute={`/posts/tutorials/${nextPostData?.postSlug}`}
+          previousPostRoute={`/posts/rust/${previousPostData?.postSlug}`}
+          nextPostRoute={`/posts/rust/${nextPostData?.postSlug}`}
         />
         <AboutAuthorSection
           authorBio={postData.authorBio}

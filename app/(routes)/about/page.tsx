@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
 import MainAppLayout from '@/app/global-components/layout/MainAppLayout';
-import ParagraphElement from '@/app/global-components/Paragraph';
+import ParagraphElement from '@/app/global-components/ParagraphElement';
 import PostWrapper from '@/app/global-components/PostWrapper';
 
 export const metadata: Metadata = {
@@ -67,22 +67,23 @@ function AboutPage() {
               Web3 Mastery is a web3 education platform that aims to help build
               the next generation of blockchain developers and web3 netizens. It
               is a platform on a mission to build a base where all categories of
-              blockchain/web3 folks - veterans, mid-level folks, and beginners
+              blockchain/web3 folks - 'veterans', mid-level folks, and beginners
               alike, will readily come on - to learn and to also find and share
               opportunities.
             </ParagraphElement>
             <ParagraphElement>
-              For now, you can explore(learn and get informed) from an array of
-              awesome articles. But soon(as more features continuing to ship-in
+              For now, you can explore from an array of awesome articles and
+              tutorials/guides. But soon(as more features continuing to ship-in
               fast), users will be able to access more awesomeness like job
-              opportunities(smart-contract engineering, bug-bounties, audits
-              etcetera), more features to foster better learning, and more.
+              opportunities(smart-contract engineering, bug-bounties, audits,
+              etcetera), extra features to foster better learning, and a lot
+              more.
             </ParagraphElement>
             <ParagraphElement>Thanks for being here frens!</ParagraphElement>
             <ParagraphElement>
-              See you inside Web3 Mastery - the button just below should help.
+              See you inside Web3 Mastery - the button below should help.
             </ParagraphElement>
-            <div className="text-3xl">🤓</div>
+            <div className="text-3xl mt-3">🤓</div>
             <div className="italic mt-10 text-[13px]">
               - Andrew James Okpainmo
             </div>
