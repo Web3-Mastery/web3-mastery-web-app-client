@@ -76,6 +76,8 @@ The following instructions will guide you on how to create pull requests for thi
 
 ## If you are handling a task from Trello, one assigned to you by a project-admin, or one gotten from any other task management board.
 
+Do the following if the task you're handling falls under the above heading.
+
 ### Pull request Title
 
 - Your pull request title should simply be a brief description of the task handled.

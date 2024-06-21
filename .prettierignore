@@ -26,6 +26,10 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
+.env.production
+.env.development
+.env.stage
 .env*.local
 
 # vercel
@@ -34,3 +38,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# config files
+*.config.js
+*.config.mjs
+*.config.ts

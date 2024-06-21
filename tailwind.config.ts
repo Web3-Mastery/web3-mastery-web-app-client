@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // fontSize: {
+      //   heading: ['48px', '64px', '36px', '24px', '18px', '16px'] // h1 to h6
+      // }
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
