@@ -1,9 +1,8 @@
 ---
-postTitle: '03: Installing Rust On Linux and Mac'
+postTitle: '03: Installing Rust On A Windows Machine'
 postDate: 'May 6, 2024'
 postIndex: 2
-postBrief: "A detailed guide to help you with installing Rust on a computer running either of 
-the Linux operating system or Apple's Mac operating system."
+postBrief: "A very detailed guide to help you install Rust on a PC running the windows operating system"
 postThumbnailUrl: '/post-image_24.png'
 authorPhotoUrl: '/aj-okpainmo_dp.jpg'
 authorName: Andrew James Okpainmo
@@ -11,7 +10,7 @@ authorBio: 'Andrew James Okpainmo is a fullstack web3 engineer who is passionate
 He loves building and scaling startups, and currently works as a freelance software engineer. He is also the founder
 and lead-writer/editor at Web3 Mastery.'
 postTags: ['blockchain-development', 'solidity', 'smart-contracts', 'software-development', 'rust']
-postSlug: "03_installing-rust-on-linux-and-mac"
+postSlug: "03_installing-rust-on-a-windows-machine"
 authorSocials: ['https://twitter.com/AJ_Okpainmo', 'https://www.linkedin.com/in/okpainmo-andrew/', 'https://github.com/Okpainmo']
 ---
 
