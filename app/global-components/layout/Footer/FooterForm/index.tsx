@@ -65,7 +65,7 @@ function FooterForm({
     <>
       <form
         action="#"
-        className="relative sm:text-[14px] w-full sm:w-[400px] sm:mx-auto text-gray-400 px-5"
+        className="relative sm:text-[14px] w-full sm:w-[400px] sm:mx-auto text-gray-400 px-5 hidden"
       >
         <div className="input-group flex flex-col w-full">
           {/* <label htmlFor="email">Email</label> */}

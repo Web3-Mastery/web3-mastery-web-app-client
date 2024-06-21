@@ -58,6 +58,7 @@ function Footer() {
         <Link href="/posts/blog">Blog</Link>
         <Link href="/posts/tutorials">Tutorials</Link>
         <Link href="/posts/solidity">Learn Solidity</Link>
+        <Link href="/posts/rust">Learn Rust</Link>
         <Link href="/posts/hardhat">Learn Hardhat</Link>
         <Link href="/posts/foundry">Learn Foundry</Link>
         <Link href="/about">About</Link>

@@ -29,7 +29,7 @@ export const categoriesData = [
     categoryDomain: 'ethereum'
   },
   {
-    categoryName: 'The W3M Rust Bootcamp',
+    categoryName: 'The Web3 Mastery Rust Bootcamp',
     categoryBrief: `A list of well-crafted and top-class Rust tutorials, carefully and professionally written in line with 
   a robust curriculum, to help you master everything you need, to start building projects(especially web3 projects and smart-contracts)
   with the Rust programming language. The curriculum is suitable for all categories of web3 professionals.`,

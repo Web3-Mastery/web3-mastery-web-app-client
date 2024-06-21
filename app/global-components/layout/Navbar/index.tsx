@@ -45,14 +45,14 @@ function Navbar() {
                 onClick={() => dispatch(showModal())}
                 className="cursor-pointer"
               >
-                <li className="border-b border-gray-300 py-5">My Dashboard</li>
+                <li className="border-b border-gray-300 py-5">Dashboard</li>
               </div>
               <div
                 onClick={() => dispatch(showModal())}
                 className="cursor-pointer"
               >
                 <li className="border-b border-gray-300 py-5">
-                  Sign up / Log in / Log out
+                  Log in / Log out
                 </li>
               </div>
               <button
