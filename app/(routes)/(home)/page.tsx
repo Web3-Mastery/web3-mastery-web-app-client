@@ -99,12 +99,18 @@ function HomePage() {
   return (
     <MainAppLayout>
       <main className="flex min-h-screen flex-col items-center justify-between pt-12 sm:pt-16 lg:pt-32">
-        <section className="hero-section poppins px-3 sm:px-[20px] text-center">
-          <div className="large-hero-text font-thin text-[40px] md:text-7xl leading-[70px] md:leading-[85px] lg:leading-[100px] lg:px-24">
+        <section className="hero-section poppins px-3 sm:px-[20px] text-left md:text-center">
+          <div className="hidden md:block large-hero-text font-thin text-[40px] md:text-7xl leading-[70px] md:leading-[85px] lg:leading-[100px] lg:px-24">
             The 'minimalist' web3 <br /> platform that helps you become <br /> a
             blockchain master.
           </div>
-          <div className="hero-buttons-wrapper mt-8 flex gap-6 justify-center">
+
+          {/* Same text, but the line breaks are necessary for desktop but not for mobile. */}
+          <div className="md:hidden large-hero-text font-thin text-[40px] md:text-7xl leading-[70px] md:leading-[85px] lg:leading-[100px] lg:px-24">
+            The 'minimalist' web3 platform that helps you become a blockchain
+            master.
+          </div>
+          <div className="hero-buttons-wrapper mt-8 flex gap-6 justify-start md:justify-center">
             <a href="#platform-provisions-section">
               <button className="capitalize w-[120px] sm:w-[150px] sm:text-[16px] text-center py-3 border bg-black rounded-[5px] text-white">
                 Get started
