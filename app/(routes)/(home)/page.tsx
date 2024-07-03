@@ -29,11 +29,11 @@ export const metadata: Metadata = {
 
 function SelectCategoryIcon({ categoryDomain }: { categoryDomain: string }) {
   // console.log(categoryDomain);
-  if (categoryDomain === 'platform') {
-    return (
-      <HiBuildingOffice className="text-[25px] bottom-5 right-4 absolute" />
-    );
-  }
+  // if (categoryDomain === 'platform') {
+  //   return (
+  //     <HiBuildingOffice className="text-[25px] bottom-5 right-4 absolute" />
+  //   );
+  // }
 
   if (categoryDomain === 'ethereum') {
     return <SiEthereum className="text-[25px] bottom-5 right-4 absolute" />;
