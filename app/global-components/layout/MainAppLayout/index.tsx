@@ -9,6 +9,7 @@ import BackgroundArtifactsWrapper from '../ArtifactsWrapper';
 // import Overlay from '../Overlay';
 import CustomModal from '../CustomModal';
 import { resetSubscriptionSuccessState } from '@/app/rtk-base/slices/newsletterSlice';
+import MarketOverview from '../MarketOverview';
 // import { Toaster } from 'react-hot-toast';
 
 function MainAppLayout({ children }: ChildProp) {
@@ -35,6 +36,7 @@ function MainAppLayout({ children }: ChildProp) {
         <main className="main-app-layout main-app-layout_bg-glass_light font-light min-h-screen md:px-[5%] lg:px-[10%] md:mx-auto text-[14px] z-10">
           <div className="min-h-screen">
             <Navbar />
+            <MarketOverview />
             {children}
           </div>
           <Footer />
