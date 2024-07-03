@@ -18,7 +18,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`px-3 py-3 w-full sm:px-[20px] lg:px-12 sm:py-4 md:py-10 flex justify-between items-center relative`}
+      className={`w-full px-3 py-3 sm:px-[20px] lg:px-12 sm:py-4 md:py-10 flex justify-between items-center relative`}
     >
       <div className="nav-right flex gap-16 items-center">
         <Link href="/">
@@ -38,7 +38,7 @@ function Navbar() {
       <div className="nav-left relative">
         <div className="hidden lg:inline-block">
           <div
-            className={`pop-up-menu ${isMenuOn ? 'inline-block' : 'hidden'} text-[12px] card-glass_dark bg-glass_light w-[300px] absolute z-20 right-[10px] top-[50px] border border-gray-200 rounded-[5px] px-4 py-6`}
+            className={`pop-up-menu ${isMenuOn ? 'inline-block' : 'hidden'} text-[12px] card-glass_dark w-[300px] absolute z-20 right-[10px] top-[50px] border border-gray-200 rounded-[5px] px-4 py-6`}
           >
             <ul className="uppercase font-normal flex flex-col text-center sm:mx-auto">
               <div
