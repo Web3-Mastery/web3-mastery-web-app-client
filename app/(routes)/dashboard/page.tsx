@@ -54,14 +54,13 @@ function Dashboard() {
         <section className="dashboard-tabs-wrapper flex flex-col gap-3">
           <div className="tabs-header card-glass_dark p-2 px-3 flex justify-between py-4">
             <div className="poppins text-[12px] bg-white py-2 px-4 flex items-center justify-center text-center w-[30%]">
+              Profile
+            </div>
+            <div className="poppins text-[12px] bg-white py-2 px-4 flex items-center justify-center text-center w-[30%]">
               Bookmarks
             </div>
             <div className="poppins text-[12px] bg-white py-2 px-4 flex items-center justify-center text-center w-[30%] shadow-lg">
               Saved Jobs
-            </div>
-
-            <div className="poppins text-[12px] bg-white py-2 px-4 flex items-center justify-center text-center w-[30%]">
-              Profile
             </div>
           </div>
           <section className="dashboard-tabs-body card-glass_dark px-3 py-4">
@@ -173,7 +172,7 @@ function Dashboard() {
                       className="mt-2 px-3 py-3 border outline-none"
                       rows={10}
                       id="bio"
-                      placeholder="please share your bio"
+                      placeholder="please share your bio(we recommend that you a professional/career bio)"
                       value={profileForm.bio}
                       onChange={(e) => {
                         setProfileForm({

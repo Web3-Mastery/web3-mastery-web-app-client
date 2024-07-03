@@ -30,7 +30,7 @@ function CompleteSignUpPage() {
   }
 
   return (
-    <main className="log-in-page flex flex-col mt-[50px] sm:mt-[100px] md:mt-[120px] w-full px-3 xsm:w-[420px] xsm:mx-auto">
+    <main className="log-in-page flex flex-col my-[50px] sm:my-[100px] md:my-[120px] w-full px-3 xsm:w-[420px] xsm:mx-auto">
       <div className="card-glass_dark w-full px-4 py-6 flex items-center flex-col">
         <Image
           src={Web3MasteryLogo}

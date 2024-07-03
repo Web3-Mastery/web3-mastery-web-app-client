@@ -69,11 +69,11 @@ function LoginPage() {
               id="password"
             />
             <HiOutlineEye
-              className={`${showPassword ? 'hidden' : 'inline-block'} text-[20px] cursor-pointer absolute top-[43px] right-4`}
+              className={`${showPassword ? 'hidden' : 'inline-block'} text-[20px] cursor-pointer absolute top-[38px] right-4`}
               onClick={toggleShowPassword}
             />
             <HiOutlineEyeSlash
-              className={`${showPassword ? 'inline-block' : 'hidden'} text-[20px] cursor-pointer absolute top-[43px] right-4`}
+              className={`${showPassword ? 'inline-block' : 'hidden'} text-[20px] cursor-pointer absolute top-[38px] right-4`}
               onClick={toggleShowPassword}
             />
           </div>
