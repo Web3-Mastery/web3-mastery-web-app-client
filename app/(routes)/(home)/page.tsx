@@ -98,7 +98,7 @@ function HomePage() {
 
   return (
     <MainAppLayout>
-      <main className="flex min-h-screen flex-col items-center justify-between pt-12 sm:pt-16 lg:pt-32">
+      <main className="flex min-h-screen flex-col items-center justify-between pt-6 sm:pt-12 lg:pt-32">
         <section className="hero-section poppins px-3 sm:px-[20px] text-left md:text-center">
           <div className="hidden md:block large-hero-text font-thin text-[40px] md:text-7xl leading-[70px] md:leading-[85px] lg:leading-[100px] lg:px-24">
             The 'minimalist' web3 <br /> platform that helps you become <br /> a
