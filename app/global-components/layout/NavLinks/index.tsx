@@ -51,6 +51,7 @@ function NavLinks() {
       <li className="w-full">
         <Link
           href="/learn"
+          onClick={() => dispatch(slideNavOut())}
           className="flex justify-center border-b border-gray-300 py-5 lg:border-none lg:py-0 w-full"
         >
           Learn
